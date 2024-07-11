@@ -1,12 +1,29 @@
 # inm-test-app
-
 Test FastAPI app for inm
+Python - 3.10.12
+FastAPI - 0.111.0
+Pydantic - 2.8.2
 
 ## Краткое опсиание
 
 Простой сервис по CRU операциям, с использованим FastAPI.  
 Данные хранятся в JSON файле.    
-Файл генерируется в автоматическом режиме при старте приложения
+Файл генерируется в автоматическом режиме при старте приложения   
+
+При старте, в `main.py` инициализируется пустой json файл `data/users.json`
+```python
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    """Эта функция будет выполнена при запуске приложения.
+    Для инициализации пустого json файла, как хранилища пользователей
+    """
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    file_path = os.path.join(base_dir, "..", "data", "users.json")
+    with open(file_path, 'w') as f:
+        json.dump([], f)
+    yield
+    os.remove(file_path)
+```
 
 ## Зависимости
 
