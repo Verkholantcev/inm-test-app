@@ -1,8 +1,8 @@
 # inm-test-app
-Test FastAPI app for inm
-Python - 3.10.12
-FastAPI - 0.111.0
-Pydantic - 2.8.2
+Test FastAPI app for inm   
+Python - 3.10.12   
+FastAPI - 0.111.0   
+Pydantic - 2.8.2   
 
 ## Краткое опсиание
 
