@@ -44,7 +44,7 @@ inm-app/
 │   ├── __init__.py          
 │   ├── crud_service/                  # Обработка логики операций CRUD 
 │   │   ├── __init__.py
-│   │   ├── json_datastore_helper      # Выгрузка всего из JSON файла для работы и запиь информации обратно в JSON
+│   │   ├── json_data_helper           # Класс для работы с JSON
 │   │   └── user_servie                # Логика CRUD, формирование исключений
 │   ├── model/                         # Модель данных
 │   │   ├── __init__.py
