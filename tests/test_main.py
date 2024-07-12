@@ -4,7 +4,7 @@ import tempfile
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.crud_service import json_datastore_helper as js
+from app.crud_service import user_service as us
 
 
 @pytest.fixture(autouse=True)
@@ -14,11 +14,11 @@ def setup_teardown():
         temp_file.write("[]")
         temp_file.flush()
         # Изменяем DATA_FILE на время теста
-        original_data_file = js.DATA_FILE  # Сохраняем оригинальный путь
-        js.DATA_FILE = temp_file.name
+        original_data_file = us.DATA_FILE  # Сохраняем оригинальный путь
+        us.DATA_FILE = temp_file.name
     yield
     # Восстанавливаем оригинальный путь к файлу данных
-    js.DATA_FILE = original_data_file
+    us.DATA_FILE = original_data_file
     os.remove(temp_file.name)
 
 
