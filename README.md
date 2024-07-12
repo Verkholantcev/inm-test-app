@@ -54,10 +54,12 @@ inm-app/
 │   │   └── users_router.py            # Маршрутизация запросов на /users/
 │   └── main.py                        # Точка входа, создание приложения FastAPI 
 ├── data/
-|   └── users_router.py                # Создается при запуске (Имитация БД)
+|   ├── readme
+|   └── users.josn                     # Создается при запуске (Имитация БД)
 ├── tests/                             # Тесты
 │   ├── __init__.py
-|   └── users_router.py                # Тесты методов
+|   ├── test_user_service.py           # Тесты модуля user_service
+|   └── test_user_router.py            # Тесты методов контроллера user_router.py
 └── requirements.txt                   # Зависимости проекта
 ```
 
